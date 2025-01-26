@@ -1,20 +1,53 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
 
-int main() {
-    struct dirent* entry;
-    DIR* dp = opendir(".");
+int main(int argc, char** argv) {
+    struct winsize ws;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
 
-    if (dp == NULL) {
-        perror("opendir");
-        return EXIT_FAILURE;
+    int middle = ((ws.ws_col - (ws.ws_col % 2)) / 2) + 1;
+
+    for (int i = 1; i < ws.ws_row; i++) {
+        if (i == 1) {
+            printf("|");
+            for (int j = 1; j < ws.ws_col - 1; j++) {
+                if (j == middle) {
+                    printf("|");
+                }
+                else {
+                    printf("-");
+                }
+            }
+            printf("|\n");
+        }
+        else if (i == ws.ws_row - 1) {
+            printf("|");
+            for (int j = 1; j < ws.ws_col - 1; j++) {
+                if (j == middle) {
+                    printf("|");
+                }
+                else {
+                    printf("_");
+                }
+            }
+            printf("|\n");
+        }
+        else {
+            printf("|");
+            for (int j = 0; j < ws.ws_col - 2; j++) {
+                if (j == middle - 1) {
+                    printf("|");
+                }
+                else {
+                    printf(" ");
+                }
+            }
+            printf("|\n");
+        }
     }
 
-    while ((entry = readdir(dp)) != NULL) {
-        printf("Found file: %s\n", entry->d_name);
-    }
+    printf("%d cols x %d rows, middle = %d", ws.ws_col, ws.ws_row, middle);
 
-    closedir(dp);
-    return EXIT_SUCCESS;
+    return 0;
 }
