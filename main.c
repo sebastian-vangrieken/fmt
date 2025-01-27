@@ -10,40 +10,40 @@ int main(int argc, char** argv) {
 
     for (int i = 1; i < ws.ws_row; i++) {
         if (i == 1) {
-            printf("|");
+            printf("\u2502");
             for (int j = 1; j < ws.ws_col - 1; j++) {
                 if (j == middle) {
-                    printf("|");
+                    printf("\u2502");
                 }
                 else {
-                    printf("-");
+                    printf("\u2500");
                 }
             }
-            printf("|\n");
+            printf("\u2502\n");
         }
         else if (i == ws.ws_row - 1) {
-            printf("|");
+            printf("\u2502");
             for (int j = 1; j < ws.ws_col - 1; j++) {
                 if (j == middle) {
-                    printf("|");
+                    printf("\u2502");
                 }
                 else {
-                    printf("_");
+                    printf("\u2500");
                 }
             }
-            printf("|\n");
+            printf("\u2502\n");
         }
         else {
-            printf("|");
+            printf("\u2502");
             for (int j = 0; j < ws.ws_col - 2; j++) {
                 if (j == middle - 1) {
-                    printf("|");
+                    printf("\u2502");
                 }
                 else {
                     printf(" ");
                 }
             }
-            printf("|\n");
+            printf("\u2502\n");
         }
     }
 
