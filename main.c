@@ -6,13 +6,21 @@ int main(int argc, char** argv) {
     struct winsize ws;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
 
-    int middle = ((ws.ws_col - (ws.ws_col % 2)) / 2) + 1;
+    int middle = ((ws.ws_col - 3) / 2) + 1;
+    int q1 = ((ws.ws_col - 5) / 4) + 1;
+    int q3 = (((ws.ws_col - 5) / 4) * 3) + 3;
 
-    for (int i = 1; i < ws.ws_row; i++) {
-        if (i == 1) {
+    for (int i = 0; i < ws.ws_row - 1; i++) {
+        if (i == 0) {
             printf("\u250c");
-            for (int j = 1; j < ws.ws_col - 1; j++) {
+            for (int j = 0; j < ws.ws_col - 2; j++) {
                 if (j == middle) {
+                    printf("\u252c");
+                }
+                else if (j == q1) {
+                    printf("\u252c");
+                }
+                else if (j == q3) {
                     printf("\u252c");
                 }
                 else {
@@ -21,10 +29,16 @@ int main(int argc, char** argv) {
             }
             printf("\u2510\n");
         }
-        else if (i == ws.ws_row - 1) {
+        else if (i == ws.ws_row - 2) {
             printf("\u2514");
-            for (int j = 1; j < ws.ws_col - 1; j++) {
+            for (int j = 0; j < ws.ws_col - 2; j++) {
                 if (j == middle) {
+                    printf("\u2534");
+                }
+                else if (j == q1) {
+                    printf("\u2534");
+                }
+                else if (j == q3) {
                     printf("\u2534");
                 }
                 else {
@@ -36,7 +50,13 @@ int main(int argc, char** argv) {
         else {
             printf("\u2502");
             for (int j = 0; j < ws.ws_col - 2; j++) {
-                if (j == middle - 1) {
+                if (j == middle) {
+                    printf("\u2502");
+                }
+                else if (j == q1) {
+                    printf("\u2502");
+                }
+                else if (j == q3) {
                     printf("\u2502");
                 }
                 else {
