@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mutte/fmt/main.c" "CMakeFiles/fmt.dir/main.c.o" "gcc" "CMakeFiles/fmt.dir/main.c.o.d"
+  "/home/mutte/fmt/src/getcwd.c" "CMakeFiles/fmt.dir/src/getcwd.c.o" "gcc" "CMakeFiles/fmt.dir/src/getcwd.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

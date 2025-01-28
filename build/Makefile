@@ -153,6 +153,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fmt.dir/build.make CMakeFiles/fmt.dir/main.c.s
 .PHONY : main.c.s
 
+src/getcwd.o: src/getcwd.c.o
+.PHONY : src/getcwd.o
+
+# target to build an object file
+src/getcwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fmt.dir/build.make CMakeFiles/fmt.dir/src/getcwd.c.o
+.PHONY : src/getcwd.c.o
+
+src/getcwd.i: src/getcwd.c.i
+.PHONY : src/getcwd.i
+
+# target to preprocess a source file
+src/getcwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fmt.dir/build.make CMakeFiles/fmt.dir/src/getcwd.c.i
+.PHONY : src/getcwd.c.i
+
+src/getcwd.s: src/getcwd.c.s
+.PHONY : src/getcwd.s
+
+# target to generate assembly for a file
+src/getcwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fmt.dir/build.make CMakeFiles/fmt.dir/src/getcwd.c.s
+.PHONY : src/getcwd.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/getcwd.o"
+	@echo "... src/getcwd.i"
+	@echo "... src/getcwd.s"
 .PHONY : help
 
 
