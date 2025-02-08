@@ -1,25 +1,48 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "getcwd.h"
+#include <dirent.h>
 
 int main(int argc, char** argv) {
-    char input[20];
+    DIR* current_dir = opendir(".");
+    struct dirent* entry;
 
-    int i = 0;
-    while (1) {
-        fgets(input, sizeof(input), stdin);
-
-        if (strcmp(input, ":q\n") == 0) {
-            break;
+    if (current_dir == NULL) {
+        perror("opendir");
+        return EXIT_FAILURE;
+    }
+    else {
+        printf("Succesfully opened directory\n");
+        printf("\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n");
+        while ((entry = readdir(current_dir)) != NULL) {
+            printf("\t\u251c\u2500 File: %s (Type: %d)\n", entry->d_name, entry->d_type);
         }
-
-        printf("%d\n", i);
-        i++;
+        closedir(current_dir);
+        return EXIT_SUCCESS;
     }
 
     return 0;
 }
 
+
+// constant program checks for :q to stop
+// char input[20];
+
+// int i = 0;
+// while (1) {
+//     fgets(input, sizeof(input), stdin);
+
+//     if (strcmp(input, ":q\n") == 0) {
+//         break;
+//     }
+
+//     printf("%d\n", i);
+//     i++;
+// }
+
+
+// options when running program
 // if (argc == 1) {
 //     printf("no options given\n");
 
