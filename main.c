@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 int string_compare(const void *, const void *);
+void print_structure(char *[], const int, int);
 
 int main(int argc, char **argv) {
     DIR *dir;
@@ -40,10 +41,36 @@ int main(int argc, char **argv) {
 
     qsort(dir_contents, amount_in_dir, sizeof(char *), string_compare);
 
-    printf("Directory contents:\n");
-    for (int i = 0; i < amount_in_dir; i++) {
-        printf("%s\n", dir_contents[i]);
+    int cursor_pos = 0;
+    while (1) {
+        print_structure(dir_contents, amount_in_dir, cursor_pos);
+
+        char input[64];
+        if (fgets(input, sizeof(input), stdin) == NULL) {
+            continue;
+        }
+
+        input[strcspn(input, "\n")] = '\0';
+
+        if (strcmp(input, ":q") == 0) {
+            break;
+        } else if (strcmp(input, "j") == 0) {
+            cursor_pos++;
+            if (cursor_pos >= amount_in_dir) {
+                cursor_pos = 0;
+            }
+        } else if (strcmp(input, "k") == 0) {
+            cursor_pos--;
+            if (cursor_pos < 0) {
+                cursor_pos = amount_in_dir - 1;
+            }
+        }
     }
+
+    //    printf("Directory contents:\n");
+    //    for (int i = 0; i < amount_in_dir; i++) {
+    //        printf("%s\n", dir_contents[i]);
+    //    }
 
     for (int i = 0; i < amount_in_dir; i++) {
         free(dir_contents[i]);
@@ -56,4 +83,17 @@ int string_compare(const void *a, const void *b) {
     char *str1 = *(char **)a;
     char *str2 = *(char **)b;
     return strcmp(str1, str2);
+}
+
+void print_structure(char *items[], const int size, int cursor_pos) {
+    system("clear");
+
+    for (int i = 0; i < size; i++) {
+        if (i == cursor_pos) {
+            printf("> ");
+        } else {
+            printf(" ");
+        }
+        printf("%s\n", items[i]);
+    }
 }
