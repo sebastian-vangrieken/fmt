@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/fmt.dir/main.c.o CMakeFiles/fmt.dir/src/getcwd.c.o -o fmt 
+/usr/bin/cc CMakeFiles/fmt.dir/main.c.o -o fmt 

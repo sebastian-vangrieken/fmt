@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/mutte/fmt/include
+C_INCLUDES = 
 
 C_FLAGS = 
 
