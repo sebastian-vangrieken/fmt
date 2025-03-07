@@ -9,6 +9,8 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
   /usr/include/linux/ioctl.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/ioctl.h \
   /usr/include/x86_64-linux-gnu/asm/ioctls.h \
@@ -31,8 +33,10 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
@@ -52,11 +56,19 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
 
@@ -64,11 +76,9 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/string.h:
+
 /usr/include/x86_64-linux-gnu/bits/ioctls.h:
-
-/home/mutte/fmt/main.c:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/unistd.h:
 
@@ -76,15 +86,13 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
+/usr/include/strings.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/stdc-predef.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/linux/ioctl.h:
 
@@ -101,6 +109,10 @@ CMakeFiles/fmt.dir/main.c.o: /home/mutte/fmt/main.c \
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/asm-generic/ioctl.h:
+
+/home/mutte/fmt/main.c:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
