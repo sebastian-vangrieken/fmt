@@ -5,6 +5,8 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
+#include "test.h"
+
 #define MAX_DIR_CONT 64
 
 void print_border(int, int);
@@ -46,6 +48,8 @@ int main(int argc, char **argv) {
     qsort(dir_cont, dir_size, sizeof(char *), string_compare);
 
     printf("\033[?25l"); // hide cursor
+
+    test();
 
     int cursor_pos = 0;
     while (1) {
